@@ -10,6 +10,7 @@ public class DogPark{
     }
 
     public static void displayAnimals(List animals ){
+        System.out.println("------");
 
         for (Object a: animals){
             if(a instanceof Cat){
@@ -28,15 +29,16 @@ public class DogPark{
     Static Method removeAnimal should take a name and an Animal list.
     The method should go through and find the animal with
     the same name then remove that animal from the list.*/
-    public static void removeAnimals(List animals, Animal animal){
+    public static void removeAnimals(List<Animal> animals, String name){
 
-        if(animals.size() > 0){
-            for(Object a: animals){
-                if(animals.contains(animal)){
-                animals.remove(animal);
-                }
-            }
-        }
+        animals.removeIf(animal -> animal.name.equals(name));
+
+//            for(Animal animal: animals){
+//                if(animal.name.equals(name)){
+//                    animals.remove(animal);
+//                }
+//            }
+
 
     }
 
